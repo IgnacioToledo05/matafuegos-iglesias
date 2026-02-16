@@ -601,8 +601,10 @@ img {
     }
 
     .productos-grid {
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
     }
+
 
     .whatsapp-float {
         width: 50px;
