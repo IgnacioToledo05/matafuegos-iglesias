@@ -144,7 +144,7 @@ img {
 }
 
 .menu-toggle {
-    display: none;
+    display: block;  /* debe mostrarse en móvil */
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -500,9 +500,10 @@ img {
    ============================================= */
 
 @media (max-width: 1024px) {
+    .servicios-grid,
     .productos-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+        text-align: center;
+}
 }
 
 @media (max-width: 768px) {
