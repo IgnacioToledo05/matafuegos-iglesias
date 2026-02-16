@@ -499,64 +499,76 @@ img {
    RESPONSIVE
    ============================================= */
 
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
 @media (max-width: 1024px) {
-    .servicios-grid,
     .productos-grid {
-        text-align: center;
-}
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
+    /* Ocultar botón hamburguesa */
     .menu-toggle {
-        display: block;
+        display: none !important;
     }
-
+    
+    /* Menú siempre visible */
     .nav {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background-color: var(--blanco);
-        transition: var(--transicion);
-        box-shadow: 0 5px 20px var(--sombra);
-    }
-
-    .nav.active {
+        position: relative;
+        top: 0;
         left: 0;
+        width: auto;
+        height: auto;
+        background: transparent;
+        box-shadow: none;
     }
-
+    
     .nav-list {
-        flex-direction: column;
-        align-items: center;
-        padding-top: 50px;
-        gap: 25px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        gap: 15px;
     }
-
+    
     .nav-link {
-        font-size: 1.2rem;
+        font-size: 0.85rem;
     }
-
+    
+    /* Títulos del hero más pequeños */
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
+    /* Servicios en 1 columna */
     .servicios-grid {
         grid-template-columns: 1fr;
     }
 
+    /* Productos centrados */
     .productos-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    
+    .producto-item {
+        width: 100%;
+        max-width: 280px;
     }
 
+    /* Contacto en 1 columna */
     .contacto-grid {
         grid-template-columns: 1fr;
     }
 
+    /* Footer en 1 columna */
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
@@ -572,51 +584,24 @@ img {
         justify-content: center;
     }
 }
-/* =============================================
-   ERRORES DE FORMULARIO
-   ============================================= */
-
-.form-group {
-    position: relative;
-}
-
-.error-message {
-    color: #d32f2f;
-    font-size: 0.8rem;
-    display: none;
-    margin-top: 5px;
-}
-
-.form-group.error input,
-.form-group.error textarea {
-    border-color: #d32f2f;
-}
-
-.form-group.error .error-message {
-    display: block;
-}
-
-.form-group.success input,
-.form-group.success textarea {
-    border-color: #4caf50;
-}
-
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
+        padding: 0 10px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        padding: 0 10px;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .productos-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .producto-item {
-        padding: 20px 10px;
+        grid-template-columns: 1fr;
     }
 
     .whatsapp-float {
