@@ -503,22 +503,19 @@ img {
    RESPONSIVE
    ============================================= */
 
-/* =============================================
-   RESPONSIVE
-   ============================================= */
-
 @media (max-width: 1024px) {
     .productos-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 @media (max-width: 768px) {
     /* Ocultar botón hamburguesa */
     .menu-toggle {
         display: none !important;
     }
     
-    /* Menú siempre visible */
+    /* Menú en 2 líneas */
     .nav {
         position: relative;
         width: auto;
@@ -527,14 +524,17 @@ img {
     }
     
     .nav-list {
-        flex-direction: row;
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 10px 20px;
+        max-width: 300px;
+        margin: 0 auto;
     }
     
     .nav-link {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
     }
     
     /* Hero */
